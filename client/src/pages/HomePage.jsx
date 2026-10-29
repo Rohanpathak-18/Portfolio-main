@@ -1,5 +1,4 @@
 import { Code2, Github, Linkedin, MapPin, Mail } from 'lucide-react';
-import { useEffect, useState } from 'react';
 import {
   achievements,
   experience,
@@ -7,7 +6,6 @@ import {
   projects as starterProjects,
   skills,
 } from '../data/portfolio';
-import { getProjects } from '../services/api';
 import SectionHeading from '../components/SectionHeading';
 import ProjectCard from '../components/ProjectCard';
 import ContactForm from '../components/ContactForm';
@@ -22,28 +20,7 @@ const process = [
 ];
 
 export default function HomePage() {
-  const [projects, setProjects] = useState(starterProjects);
-  useEffect(() => {
-    getProjects()
-      .then((items) => {
-        if (items?.length) {
-          const databaseProjects = new Map(
-            items.map((project) => [project.name, project]),
-          );
-          const starterNames = new Set(starterProjects.map((project) => project.name));
-          const updatedStarterProjects = starterProjects.map((project) => ({
-            ...project,
-            ...databaseProjects.get(project.name),
-          }));
-          const additionalProjects = items.filter(
-            (project) => !starterNames.has(project.name),
-          );
-
-          setProjects([...updatedStarterProjects, ...additionalProjects]);
-        }
-      })
-      .catch(() => {});
-  }, []);
+  const projects = starterProjects;
 
   return (
     <main>

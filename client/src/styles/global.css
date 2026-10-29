@@ -916,6 +916,12 @@ textarea {
   font-size: 10px;
   line-height: 1.5;
 }
+.form-status-success {
+  color: #9ac79f;
+}
+.form-status-error {
+  color: #f28d91;
+}
 .site-footer {
   display: flex;
   min-height: 82px;

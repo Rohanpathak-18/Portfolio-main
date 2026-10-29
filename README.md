@@ -1,22 +1,15 @@
 # Rohan Pathak — Portfolio
 
-A responsive MERN portfolio with a React/Vite client and an Express/Mongoose API arranged with MVC-style models, controllers, and routes.
+A responsive React/Vite portfolio with static project data and a Web3Forms-powered contact form.
 
 ## Run locally
 
-1. Install Node.js 20+ and MongoDB (local or Atlas).
-2. Copy `server/.env.example` to `server/.env` and set `MONGODB_URI`.
-3. From the repository root run `npm install`, then `npm run dev`.
-4. Open the client URL printed by Vite (normally `http://localhost:5173`). The API runs on port 5000.
+1. Install Node.js 20+.
+2. From the repository root run `npm install`, then `npm run dev`.
+3. Open the Vite URL (normally `http://localhost:5173`).
 
-The UI includes resume projects as editable starter content; update `client/src/data/portfolio.js` as your portfolio grows. The API also exposes projects and contact-message endpoints. MongoDB is optional for the page to render, but required for contact submissions and database-backed project reads.
+This portfolio runs entirely in the browser: projects, profile links, and skills are maintained in `client/src/data/portfolio.js`. The contact form submits directly to Web3Forms, so no portfolio API or database is required.
 
-## Portrait
+## Deploy to Vercel
 
-Place your portrait at `client/public/images/rohan-portrait.jpg`. The hero includes a styled fallback until that file is present.
-
-## API
-
-- `GET /api/health`
-- `GET /api/projects`
-- `POST /api/contact` with `{ name, email, subject?, message }`
+Set the Vercel project root directory to `client`, use `npm run build` as the build command, and `dist` as the output directory. The contact form uses the Web3Forms access key configured in `client/src/components/ContactForm.jsx`.
