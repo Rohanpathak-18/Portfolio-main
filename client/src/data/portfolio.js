@@ -104,6 +104,17 @@ export const projects = [
     link: 'https://github.com/Rohanpathak-18/Harmes_Agent.git',
     demo: 'https://harmes-agent.onrender.com/',
   },
+  {
+    number: '08',
+    name: 'Vitra AI',
+    category: 'GEMINI AI ASSISTANT',
+    description:
+      'A React-based AI assistant that uses the Gemini API to answer user questions.',
+    stack: ['React', 'Gemini API'],
+    visual: 'vitra',
+    mark: 'V',
+    link: 'https://github.com/Rohanpathak-18/Vitra.AI.git',
+  },
 ];
 
 export const skills = [

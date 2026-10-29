@@ -469,6 +469,9 @@ textarea {
 .art-harmes {
   background: radial-gradient(ellipse at 52% 50%, #443363, #211a31 48%, #100d15 100%);
 }
+.art-vitra {
+  background: radial-gradient(ellipse at 52% 50%, #3e466d, #20263c 48%, #0c101b 100%);
+}
 .art-top {
   position: absolute;
   inset: 16px 17px auto;
