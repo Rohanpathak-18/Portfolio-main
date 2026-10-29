@@ -232,6 +232,37 @@ textarea {
   font: 10px var(--mono);
   letter-spacing: 0.06em;
 }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 17px;
+}
+.hero-actions .text-link {
+  margin-top: 0;
+}
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 13px;
+  border: 1px solid rgba(226, 60, 66, 0.55);
+  color: var(--paper);
+  font: 9px var(--mono);
+  letter-spacing: 0.045em;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.resume-link:hover {
+  border-color: var(--red);
+  background: rgba(226, 60, 66, 0.12);
+}
+.resume-link svg {
+  color: var(--red);
+}
+.mobile-scroll-cue {
+  display: none;
+}
 .text-link span {
   display: inline-block;
   animation: hero-cue-bob 1.35s ease-in-out 0.8s infinite;
@@ -1071,15 +1102,22 @@ textarea {
     color: var(--red);
   }
   .hero {
-    padding-top: 18px;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 62px);
+    height: calc(100svh - 62px);
+    min-height: 620px;
+    flex-direction: column;
+    padding: 18px 18px 12px;
   }
   .hero-topline,
   .hero-bottomline {
     font-size: 7px;
   }
   .hero-stage {
+    flex: 1;
     min-height: 0;
-    padding-block: 30px 22px;
+    padding-block: 24px 16px;
   }
   .script-note {
     font-size: 19px;
@@ -1097,8 +1135,15 @@ textarea {
     font-size: 11px;
   }
   .text-link {
-    margin-top: 8px;
     font-size: 9px;
+  }
+  .hero-actions {
+    gap: 12px;
+    margin-top: 13px;
+  }
+  .resume-link {
+    padding: 9px 10px;
+    font-size: 8px;
   }
   .hero-stats {
     gap: 8px;
@@ -1115,6 +1160,21 @@ textarea {
   }
   .hero-bottomline {
     gap: 8px;
+  }
+  .mobile-scroll-cue {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    color: #8c8883;
+    font: 8px var(--mono);
+    letter-spacing: 0.08em;
+  }
+  .mobile-scroll-cue span {
+    color: var(--red);
+    font-size: 15px;
   }
   .section-heading {
     display: block;

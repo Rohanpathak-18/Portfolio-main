@@ -1,4 +1,4 @@
-import { Code2, Github, Linkedin, MapPin, Mail } from 'lucide-react';
+import { Code2, Download, Github, Linkedin, MapPin, Mail } from 'lucide-react';
 import {
   achievements,
   experience,
@@ -70,9 +70,18 @@ export default function HomePage() {
               <span>& AI ENTHUSIAST</span>
             </p>
             <p className="hero-intro">{profile.intro}</p>
-            <a href="#work" className="text-link">
-              EXPLORE MY WORK <span aria-hidden="true">v</span>
-            </a>
+            <div className="hero-actions">
+              <a href="#work" className="text-link">
+                EXPLORE MY WORK <span aria-hidden="true">v</span>
+              </a>
+              <a
+                className="resume-link"
+                href="/Rohan-Pathak-Resume.pdf"
+                download="Rohan-Pathak-Resume.pdf"
+              >
+                <Download size={15} /> DOWNLOAD RESUME
+              </a>
+            </div>
           </div>
           <div className="hero-side-note">
             <span className="note-mark">
@@ -123,6 +132,9 @@ export default function HomePage() {
             <BrandMark className="brand-mark-inline" />
           </span>
         </div>
+        <a className="mobile-scroll-cue" href="#work">
+          SCROLL TO EXPLORE <span aria-hidden="true">↓</span>
+        </a>
       </section>
 
       <section className="work-section section shell" id="work">
