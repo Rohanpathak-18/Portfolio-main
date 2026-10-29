@@ -8,7 +8,7 @@ export default function ContactForm() {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
-    formData.append('access_key', 'cde0b91b-b2f2-4d30-b777-a9683d974869');
+    formData.append('access_key', '2f3beee9-a805-462e-84b4-1d592a179f42');
     setSending(true);
     setStatus({ type: '', message: '' });
 
@@ -30,7 +30,10 @@ export default function ContactForm() {
     } catch (error) {
       setStatus({
         type: 'error',
-        message: error.message || 'Unable to send your message. Please try again.',
+        message:
+          error instanceof TypeError
+            ? 'Could not reach the form service. Check your connection and try again.'
+            : error.message || 'Unable to send your message. Please try again.',
       });
     } finally {
       setSending(false);
