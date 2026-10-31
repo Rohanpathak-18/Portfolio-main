@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" fill="none">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#302a22"/><stop offset="1" stop-color="#141512"/></linearGradient><radialGradient id="glow"><stop stop-color="#d9c98f" stop-opacity=".2"/><stop offset="1" stop-color="#d9c98f" stop-opacity="0"/></radialGradient></defs>
+  <path fill="url(#bg)" d="M0 0h1000v760H0z"/><circle cx="500" cy="380" r="335" fill="url(#glow)"/>
+  <rect x="170" y="180" width="260" height="145" rx="22" fill="#20211b" stroke="#dfcea0" stroke-opacity=".78" stroke-width="4"/><rect x="570" y="180" width="260" height="145" rx="22" fill="#20211b" stroke="#dfcea0" stroke-opacity=".78" stroke-width="4"/><rect x="370" y="445" width="260" height="145" rx="22" fill="#20211b" stroke="#dfcea0" stroke-opacity=".78" stroke-width="4"/>
+  <path d="M430 250h140M300 325v70h200v50m200-120v70H500" stroke="#dfcea0" stroke-opacity=".65" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="500" cy="250" r="14" fill="#302a22" stroke="#dfcea0" stroke-width="5"/><circle cx="500" cy="518" r="30" fill="#dfcea0" fill-opacity=".12" stroke="#dfcea0" stroke-opacity=".72" stroke-width="4"/><path d="M485 518h30m-15-15v30" stroke="#dfcea0" stroke-width="4" stroke-linecap="round"/>
+</svg>

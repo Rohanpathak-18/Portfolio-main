@@ -109,7 +109,11 @@ export default function ProjectCard({ project }) {
           <span>RP / DIGITAL WORK</span>
           <span>SELECTED WORK</span>
         </div>
-        <ProjectArtwork visual={project.visual} />
+        {project.image ? (
+          <img className="project-image" src={project.image} alt="" loading="lazy" />
+        ) : (
+          <ProjectArtwork visual={project.visual} />
+        )}
         <span className="art-caption">{project.category}</span>
       </div>
       <div className="project-meta">
