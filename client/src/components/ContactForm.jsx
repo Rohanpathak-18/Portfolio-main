@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { UserRound } from 'lucide-react';
 
 export default function ContactForm() {
   const [status, setStatus] = useState({ type: '', message: '' });
@@ -44,11 +45,13 @@ export default function ContactForm() {
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="form-row">
         <label>
-          Your name
+          <span className="form-label-with-mark">
+            <UserRound className="form-label-mark" aria-hidden="true" /> Your name
+          </span>
           <input
             name="name"
             autoComplete="name"
-            placeholder="Jane Smith"
+            placeholder="What's your name, buddy?"
             required
             maxLength="80"
           />
@@ -59,7 +62,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             autoComplete="email"
-            placeholder="jane@email.com"
+            placeholder="youremail@gmail.com"
             required
             maxLength="160"
           />

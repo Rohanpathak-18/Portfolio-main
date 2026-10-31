@@ -42,7 +42,7 @@ export const projects = [
     visual: 'ledger',
     mark: 'L',
     link: 'https://github.com/Rohanpathak-18/LifeLedger.git',
-    demo: 'https://lifeledger-rl62.onrender.com/',
+    demo: 'https://lifeledger-3tvt.onrender.com',
   },
   {
     number: '03',

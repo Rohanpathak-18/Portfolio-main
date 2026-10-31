@@ -11,6 +11,7 @@ import ProjectCard from '../components/ProjectCard';
 import ContactForm from '../components/ContactForm';
 import BrandMark from '../components/BrandMark';
 import HeroRopes from '../components/HeroRopes';
+import GitHubActivity from '../components/GitHubActivity';
 
 const process = [
   ['01', 'Understand', 'Start with the people, needs, and details behind the idea.'],
@@ -30,6 +31,7 @@ export default function HomePage() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#work">Work</a>
+          <a href="#activity">Activity</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -128,7 +130,7 @@ export default function HomePage() {
             <MapPin size={14} /> {profile.location}
           </span>
           <span>
-            OPEN TO INTERNSHIPS & COLLABORATIONS{' '}
+            OPEN TO COLLABORATIONS{' '}
             <BrandMark className="brand-mark-inline" />
           </span>
         </div>
@@ -154,11 +156,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      <GitHubActivity />
+
       <section className="about-section section" id="about">
         <div className="about-grid shell">
           <div className="about-intro">
             <SectionHeading
-              eyebrow="02 — A LITTLE ABOUT ME"
+              eyebrow="03 — A LITTLE ABOUT ME"
               title={
                 <>
                   Curious by nature.
@@ -211,7 +215,7 @@ export default function HomePage() {
 
       <section className="skills-section section shell">
         <SectionHeading
-          eyebrow="03 — THE TOOLKIT"
+          eyebrow="04 — THE TOOLKIT"
           title="Things I work with"
           note="A growing toolkit for bringing ideas to life."
         />
@@ -249,7 +253,7 @@ export default function HomePage() {
       <section className="contact-section section" id="contact">
         <div className="contact-layout shell">
           <div className="contact-copy">
-            <span className="eyebrow">04 — HAVE SOMETHING IN MIND?</span>
+            <span className="eyebrow">05 — HAVE SOMETHING IN MIND?</span>
             <h2>
               Let’s make
               <br />
@@ -302,10 +306,7 @@ export default function HomePage() {
         <a className="wordmark" href="#top">
           RP
         </a>
-        <span>DESIGNED & BUILT WITH CARE — 2026</span>
-        <a href={profile.links.leetcode} target="_blank" rel="noreferrer">
-          LEETCODE &gt;
-        </a>
+        <span>DESIGNED &amp; BUILT WITH CARE BY ROHAN</span>
         <a href="#top">BACK TO TOP ^</a>
       </footer>
     </main>

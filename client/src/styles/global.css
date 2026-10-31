@@ -480,28 +480,28 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .art-study {
-  background: radial-gradient(ellipse at 50% 54%, #163d42, #102023 47%, #0a1011 100%);
+  background: radial-gradient(ellipse at 50% 48%, #34332b, #24231f 52%, #151513 100%);
 }
 .art-ledger {
-  background: radial-gradient(ellipse at 60% 44%, #6c2825, #321918 45%, #120d0d 100%);
+  background: radial-gradient(ellipse at 60% 44%, #393029, #25221f 48%, #151412 100%);
 }
 .art-chat {
-  background: radial-gradient(ellipse at 52% 50%, #453f35, #25241f 48%, #10100f 100%);
+  background: radial-gradient(ellipse at 52% 50%, #36332a, #24231f 48%, #151513 100%);
 }
 .art-medibot {
-  background: radial-gradient(ellipse at 52% 50%, #22566a, #142e3c 48%, #0a1219 100%);
+  background: radial-gradient(ellipse at 52% 50%, #30352f, #22241f 48%, #141512 100%);
 }
 .art-voteverse {
-  background: radial-gradient(ellipse at 52% 50%, #264e42, #142a25 48%, #0a1110 100%);
+  background: radial-gradient(ellipse at 52% 50%, #33342b, #23241e 48%, #141512 100%);
 }
 .art-star {
-  background: radial-gradient(ellipse at 52% 50%, #5a4728, #302516 48%, #100e0b 100%);
+  background: radial-gradient(ellipse at 52% 50%, #383329, #25231e 48%, #151411 100%);
 }
 .art-harmes {
-  background: radial-gradient(ellipse at 52% 50%, #443363, #211a31 48%, #100d15 100%);
+  background: radial-gradient(ellipse at 52% 50%, #34312e, #24231f 48%, #151513 100%);
 }
 .art-vitra {
-  background: radial-gradient(ellipse at 52% 50%, #3e466d, #20263c 48%, #0c101b 100%);
+  background: radial-gradient(ellipse at 52% 50%, #31342e, #23241f 48%, #141512 100%);
 }
 .art-top {
   position: absolute;
@@ -512,17 +512,17 @@ textarea {
   font: 8px var(--mono);
   letter-spacing: 0.08em;
 }
-.art-mark {
+.project-illustration {
   position: relative;
   z-index: 1;
-  color: rgba(255, 255, 255, 0.88);
-  font: 600 clamp(100px, 17vw, 220px)/0.8 var(--display);
-  letter-spacing: -0.13em;
-  text-shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
+  width: min(78%, 300px);
+  overflow: visible;
+  color: #dfcea0;
+  filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.32));
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.project-card:hover .art-mark {
-  transform: scale(1.08) rotate(-4deg);
+.project-card:hover .project-illustration {
+  transform: translateY(-5px) scale(1.04);
 }
 .art-caption {
   position: absolute;
@@ -531,18 +531,6 @@ textarea {
   color: rgba(255, 255, 255, 0.68);
   font: 8px var(--mono);
   letter-spacing: 0.08em;
-}
-.art-orbit {
-  position: absolute;
-  width: 68%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
-  transform: rotate(-28deg) scaleY(0.43);
-}
-.orbit-two {
-  width: 86%;
-  transform: rotate(35deg) scaleY(0.56);
 }
 .project-meta {
   display: flex;
@@ -571,6 +559,11 @@ textarea {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.project-live-label {
+  color: var(--red);
+  font: 9px var(--mono);
+  letter-spacing: 0.06em;
 }
 .project-actions > a:not(.round-link) {
   display: flex;
@@ -614,6 +607,191 @@ textarea {
   color: var(--muted);
   font: 8px var(--mono);
   letter-spacing: 0.1em;
+}
+.github-section {
+  border-block: 1px solid var(--line);
+  background: #0e0e0e;
+}
+.github-section-heading,
+.github-panel-heading,
+.contribution-footer,
+.github-section-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.github-section-heading {
+  margin-bottom: 38px;
+}
+.github-section-heading h2 {
+  margin: 13px 0 0;
+  font: 600 clamp(36px, 5vw, 58px)/1 var(--display);
+  letter-spacing: -0.07em;
+}
+.github-section-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #c8c1b7;
+  font: 9px var(--mono);
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+.github-section-heading > a:hover {
+  color: var(--red);
+}
+.github-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+  gap: 18px;
+}
+.github-panel {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: rgba(9, 9, 9, 0.55);
+}
+.github-panel-heading {
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.github-panel-heading h3 {
+  margin: 8px 0 0;
+  font: 500 17px/1.4 var(--display);
+  letter-spacing: -0.035em;
+}
+.github-panel-period {
+  padding-top: 2px;
+  color: #77726d;
+  font: 8px var(--mono);
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+.contribution-scroll {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.contribution-months,
+.contribution-weeks {
+  display: grid;
+  width: max-content;
+  grid-auto-flow: column;
+  grid-auto-columns: 10px;
+  gap: 4px;
+}
+.contribution-months {
+  min-height: 16px;
+  color: #89847e;
+  font: 8px var(--mono);
+}
+.contribution-weeks {
+  grid-template-rows: repeat(7, 10px);
+}
+.contribution-day {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.025);
+  border-radius: 2px;
+  background: #242321;
+}
+.contribution-day[data-level='1'] {
+  background: rgba(226, 60, 66, 0.28);
+}
+.contribution-day[data-level='2'] {
+  background: rgba(226, 60, 66, 0.48);
+}
+.contribution-day[data-level='3'] {
+  background: rgba(226, 60, 66, 0.72);
+}
+.contribution-day[data-level='4'] {
+  background: #e23c42;
+}
+.contribution-footer {
+  margin-top: 18px;
+  color: #77726d;
+  font: 8px var(--mono);
+}
+.contribution-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.contribution-legend .contribution-day {
+  width: 9px;
+  height: 9px;
+}
+.github-fallback,
+.github-empty-state {
+  display: block;
+  min-height: 124px;
+  padding-block: 24px;
+  color: #89847e;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.github-fallback:hover {
+  color: var(--paper);
+}
+.commit-list {
+  max-height: 260px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+.commit-list li + li {
+  border-top: 1px solid var(--line);
+}
+.commit-list a,
+.commit-entry-private {
+  display: grid;
+  gap: 8px;
+  padding: 13px 0;
+}
+.commit-list li:first-child > a,
+.commit-list li:first-child > .commit-entry-private {
+  padding-top: 0;
+}
+.commit-message {
+  overflow: hidden;
+  color: #dedad4;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.commit-list a:hover .commit-message {
+  color: var(--red);
+}
+.commit-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #817c76;
+  font: 8px var(--mono);
+}
+.commit-meta > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.commit-meta time {
+  flex: 0 0 auto;
+}
+.commit-meta i {
+  flex: 0 0 auto;
+  color: var(--red);
+  font-style: normal;
+}
+.github-section-foot {
+  margin-top: 28px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: 8px var(--mono);
+  letter-spacing: 0.09em;
 }
 .about-section {
   border-block: 1px solid var(--line);
@@ -881,6 +1059,17 @@ textarea {
   color: #b4aea7;
   font: 9px var(--mono);
   letter-spacing: 0.04em;
+}
+.form-label-with-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.form-label-mark {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+  color: var(--red);
 }
 .contact-form input,
 .contact-form textarea {
@@ -1180,6 +1369,34 @@ textarea {
     display: block;
     margin-bottom: 30px;
   }
+  .github-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+  .github-section-heading h2 {
+    font-size: 42px;
+  }
+  .github-dashboard {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .github-panel {
+    padding: 17px 14px;
+  }
+  .github-panel-heading h3 {
+    font-size: 15px;
+  }
+  .github-panel-period {
+    font-size: 7px;
+  }
+  .contribution-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .github-section-foot {
+    font-size: 7px;
+  }
   .section-heading h2 {
     font-size: 42px;
   }
@@ -1194,9 +1411,7 @@ textarea {
   .project-art {
     height: 300px;
   }
-  .art-mark {
-    font-size: 190px;
-  }
+  .project-illustration { width: min(76%, 290px); }
   .project-description {
     min-height: 0;
   }
