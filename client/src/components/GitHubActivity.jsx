@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { ExternalLink, Github, RefreshCw } from 'lucide-react';
 
 const username = 'Rohanpathak-18';
 const profileUrl = `https://github.com/${username}`;
@@ -56,38 +56,51 @@ export default function GitHubActivity() {
   const [commitsLoading, setCommitsLoading] = useState(true);
   const [contributionError, setContributionError] = useState(false);
   const [commitError, setCommitError] = useState(false);
+  const publicContributionDataRef = useRef(null);
+
+  const loadActivity = useCallback(
+    async (signal) => {
+      setCommitsLoading(true);
+      setCommitError(false);
+
+      try {
+        const response = await fetch('/api/github-activity', {
+          cache: 'no-store',
+          signal,
+        });
+        if (!response.ok) throw new Error('GitHub activity unavailable');
+        setActivity(await response.json());
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+        setCommitError(true);
+
+        if (!publicContributionDataRef.current) {
+          try {
+            const fallbackResponse = await fetch(
+              `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
+              { signal },
+            );
+            if (!fallbackResponse.ok) throw new Error('Contribution data unavailable');
+            const fallbackData = await fallbackResponse.json();
+            publicContributionDataRef.current = fallbackData;
+            setPublicContributionData(fallbackData);
+          } catch (fallbackError) {
+            if (fallbackError.name !== 'AbortError') setContributionError(true);
+          }
+        }
+      } finally {
+        if (!signal?.aborted) setCommitsLoading(false);
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const controller = new AbortController();
-
-    fetch('/api/github-activity', { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error('GitHub activity unavailable');
-        return response.json();
-      })
-      .then(setActivity)
-      .catch((error) => {
-        if (error.name === 'AbortError') return;
-        setCommitError(true);
-        return fetch(
-          `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
-          { signal: controller.signal },
-        )
-          .then((response) => {
-            if (!response.ok) throw new Error('Contribution data unavailable');
-            return response.json();
-          })
-          .then(setPublicContributionData)
-          .catch((fallbackError) => {
-            if (fallbackError.name !== 'AbortError') setContributionError(true);
-          });
-      })
-      .finally(() => {
-        setCommitsLoading(false);
-      });
+    loadActivity(controller.signal);
 
     return () => controller.abort();
-  }, []);
+  }, [loadActivity]);
 
   const contributions = activity?.contributions || publicContributionData?.contributions;
   const weeks = makeWeeks(contributions);
@@ -203,7 +216,17 @@ export default function GitHubActivity() {
                 <span className="eyebrow">RECENT COMMITS</span>
                 <h3>Latest pushes</h3>
               </div>
-              <span className="github-panel-period">PUBLIC + PRIVATE</span>
+              <div className="github-commit-controls">
+                <span className="github-panel-period">PUBLIC + PRIVATE</span>
+                <button
+                  className="github-refresh-button"
+                  type="button"
+                  onClick={() => loadActivity()}
+                  disabled={commitsLoading}
+                >
+                  <RefreshCw size={12} /> REFRESH
+                </button>
+              </div>
             </div>
 
             {commitError ? (

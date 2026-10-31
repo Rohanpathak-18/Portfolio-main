@@ -668,6 +668,34 @@ textarea {
   letter-spacing: 0.06em;
   text-align: right;
 }
+.github-commit-controls {
+  display: grid;
+  justify-items: end;
+  gap: 11px;
+}
+.github-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #c7c0b6;
+  cursor: pointer;
+  font: 8px var(--mono);
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+.github-refresh-button:hover:not(:disabled) {
+  color: var(--red);
+}
+.github-refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+.github-refresh-button svg {
+  color: var(--red);
+}
 .contribution-scroll {
   overflow-x: auto;
   padding-bottom: 6px;
