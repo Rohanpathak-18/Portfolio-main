@@ -643,8 +643,7 @@ textarea {
 }
 .github-dashboard {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr);
 }
 .github-panel {
   min-width: 0;
@@ -667,34 +666,6 @@ textarea {
   font: 8px var(--mono);
   letter-spacing: 0.06em;
   text-align: right;
-}
-.github-commit-controls {
-  display: grid;
-  justify-items: end;
-  gap: 11px;
-}
-.github-refresh-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #c7c0b6;
-  cursor: pointer;
-  font: 8px var(--mono);
-  letter-spacing: 0.06em;
-  transition: color 0.2s ease;
-}
-.github-refresh-button:hover:not(:disabled) {
-  color: var(--red);
-}
-.github-refresh-button:disabled {
-  cursor: wait;
-  opacity: 0.55;
-}
-.github-refresh-button svg {
-  color: var(--red);
 }
 .contribution-scroll {
   overflow-x: auto;
@@ -750,8 +721,7 @@ textarea {
   width: 9px;
   height: 9px;
 }
-.github-fallback,
-.github-empty-state {
+.github-fallback {
   display: block;
   min-height: 124px;
   padding-block: 24px;
@@ -761,57 +731,6 @@ textarea {
 }
 .github-fallback:hover {
   color: var(--paper);
-}
-.commit-list {
-  max-height: 260px;
-  margin: 0;
-  padding: 0;
-  overflow-y: auto;
-  list-style: none;
-}
-.commit-list li + li {
-  border-top: 1px solid var(--line);
-}
-.commit-list a,
-.commit-entry-private {
-  display: grid;
-  gap: 8px;
-  padding: 13px 0;
-}
-.commit-list li:first-child > a,
-.commit-list li:first-child > .commit-entry-private {
-  padding-top: 0;
-}
-.commit-message {
-  overflow: hidden;
-  color: #dedad4;
-  font-size: 12px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: color 0.2s ease;
-}
-.commit-list a:hover .commit-message {
-  color: var(--red);
-}
-.commit-meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  color: #817c76;
-  font: 8px var(--mono);
-}
-.commit-meta > span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.commit-meta time {
-  flex: 0 0 auto;
-}
-.commit-meta i {
-  flex: 0 0 auto;
-  color: var(--red);
-  font-style: normal;
 }
 .github-section-foot {
   margin-top: 28px;

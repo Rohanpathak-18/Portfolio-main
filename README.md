@@ -12,4 +12,4 @@ Projects, profile links, and skills are maintained in `client/src/data/portfolio
 
 ## Deploy to Vercel
 
-Set the Vercel project root directory to `client`, use `npm run build` as the build command, and `dist` as the output directory. Add `GITHUB_TOKEN` to the Vercel project's server-side environment variables. The authenticated dashboard includes private contribution totals and recent private commit messages; private repository names are hidden, but commit messages are visible to portfolio visitors. The contact form uses the Web3Forms access key configured in `client/src/components/ContactForm.jsx`.
+Set the Vercel project root directory to `client`, use `npm run build` as the build command, and `dist` as the output directory. Add `GITHUB_TOKEN` to the Vercel project's server-side environment variables to include private contribution totals in the graph. The contact form uses the Web3Forms access key configured in `client/src/components/ContactForm.jsx`.
